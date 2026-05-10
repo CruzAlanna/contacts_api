@@ -10,4 +10,14 @@ class ContactsController < ApplicationController
 
     render json: contact
   end
+
+  def create
+    contact = Contact.create(
+      name: params[:name],
+      phone: params[:phone],
+      email: params[:email]
+    )
+
+    render json: contact
+  end
 end
